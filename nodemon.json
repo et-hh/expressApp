@@ -1,0 +1,23 @@
+{
+    "restartable": "rs",
+    "ignore": [
+        ".git",
+        ".svn",
+        "public",
+        "node_modules/**/node_modules",
+        "webpack.config.js",
+        "dist",
+        "source"
+    ],
+    "verbose": true,
+    "execMap": {
+        "js": "node --harmony"
+    },
+    "watch": [
+      "views"
+    ],
+    "env": {
+        "NODE_ENV": "development"
+    },
+    "ext": "js json ejs scss"
+}

@@ -1,0 +1,31 @@
+body {
+  background: url("~images/server_page.jpg") no-repeat;
+  .index {
+    font-size: 10px;
+  }
+}
+
+.selector {
+  width: 150px;
+  // height: 64px; /*px*/
+  // font-size: 28px; /*px*/
+  border: 1px solid #ddd; /*no*/
+}
+
+.swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+}
+.swipe-wrap, .swiper-wrapper {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div, .swiper-wrapper > div {
+  float:left;
+  width:100%;
+  height: 300px;
+  position: relative;
+}

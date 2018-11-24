@@ -1,12 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/common.css' />
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <%- include('../components/head', {title: title}) %>
+    <link rel='stylesheet' href='/index.css' />
   </head>
   <body>
-    <%- include('../../components/header', {title: title}) %>
+    <%- include('../components/header', {title: title}) %>
+    <%- include('./components/ii') %>
     <a href="/hh">to hh</a>
+    <!-- <div class="swiper-container" id="slider">
+      <div class='swipe-wrap'>
+        <div style="background: blue;">hh</div>
+        <div style="background: rgba(255,255,0,.4);">条目2</div>
+        <div style="background: rgba(255,0,0,.4);">条目3</div>
+        <div style="background: rgba(0,255,0,.4);">条目4</div>
+        <div style="background: rgba(0,0,255,.4);">条目5</div>
+      </div>
+    </div> -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background: blue;">hh</div>
+        <div class="swiper-slide" style="background: rgba(255,255,0,.4);">条目2</div>
+        <div class="swiper-slide" style="background: rgba(255,0,0,.4);">条目3</div>
+        <div class="swiper-slide" style="background: rgba(0,255,0,.4);">条目4</div>
+        <div class="swiper-slide" style="background: rgba(0,0,255,.4);">条目5</div>
+      </div>
+    </div>
+    <div class="pagination"></div>
+    <script src="/index.js"></script>
   </body>
 </html>

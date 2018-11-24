@@ -3,7 +3,6 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var sassMiddleware = require('node-sass-middleware');
 
 var debug = require('debug')('myapp:server');
 var http = require('http');
@@ -20,19 +19,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(sassMiddleware({
-  src: path.join(__dirname, 'public'),
-  dest: path.join(__dirname, 'public'),
-  outputStyle: 'compressed',
-  indentedSyntax: false, // true = .sass and false = .scss
-  sourceMap: false,
-  log: function(severity, key, val){
-    console.log(val)
-    console.log(key)
-    console.log(severity)
-  }
-}));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use('/', routes);
 
@@ -66,7 +53,9 @@ var server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-server.listen(port);
+server.listen(port, '192.168.0.102', function(){
+  console.log('listen for: 192.168.0.102:' + port)
+});
 server.on('error', onError);
 server.on('listening', onListening);
 
